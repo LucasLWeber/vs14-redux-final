@@ -1,50 +1,32 @@
-# React + TypeScript + Vite
+# 🛒 DBC Electronics
+DBC Electronics é uma aplicação de e-commerce construída com React, que segue a metodologia de Atomic Design para estruturar e organizar seus componentes. A aplicação permite que os usuários naveguem por uma lista de produtos eletrônicos, adicionem itens ao carrinho, façam pedidos e gerenciem suas contas. A arquitetura modular baseada em Atomic Design facilita a manutenção e a escalabilidade do projeto.
+## 👥 Integrantes
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+| Nome               | GitHub                                        |
+|--------------------|-----------------------------------------------|
+| Alisson Fernandes   | [alissonf94](https://github.com/alissonf94)   |
+| Edson Machado       | [EdsonMFN](https://github.com/EdsonMFN)       |
+| Lucas Weber         | [LucasLWeber](https://github.com/LucasLWeber) |
 
-Currently, two official plugins are available:
+## 🛠️ Instalações
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Router: `npm install react-router-dom`;
+- Tailwindcss: `npm install -D tailwindcss | npx tailwindcss init`;
+- React Icons: `npm install react-icons --save`;
+- React Hook Form: `npm install react-hook-form`;
+- Instalar as dependências: `npm i`;
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### 🔗 Links
 
-- Configure the top-level `parserOptions` property like this:
+🎨 [Figma](https://www.figma.com/design/RgQkL1ndQyf3u1SYp9sZOQ/E-Commerce-UI-KIT-(Community)?node-id=116-92&node-type=CANVAS&t=mBFrTik4pzyRx5AV-0)  |  💻 [GitHub](https://github.com/LucasLWeber/vs14-redux-final)
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### 🚀 Sprint 1
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- Estrutura do Atomic Design já com as prévia dos componentes e arquivos tsx básicos
+- Documentação no Readme com o assunto que vai ser desenvolvido e link do figma que foi usado como isnpiração;
+- Layout da aplicação - cores e acessibilidade;
+- Estrutura de cards do e-comerce já com as cores e responsivo; 
+
