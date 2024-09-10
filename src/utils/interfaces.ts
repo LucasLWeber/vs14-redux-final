@@ -1,3 +1,4 @@
+
 export interface TitleProps{
 	content: string;
 }
@@ -46,3 +47,12 @@ export interface CheckoutModalProps{
 	isOpen: boolean;
 	onClose: () => void;
 }
+
+export interface Usuario {
+	name: string;
+	email: string;
+	picture: string;
+}
+
+  export interface ButtonGoogleLoginProps {
+	responseGoogle: (usuario: Usuario) => void;}
