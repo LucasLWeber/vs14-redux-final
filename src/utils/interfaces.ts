@@ -33,3 +33,19 @@ export interface CardProps {
 	priceProps: PriceProps;
 	buttonProps?: ButtonProps;
 }
+
+export interface InputProps {
+	typeInput: string;
+	placeholder: string;
+	name: string;
+}
+
+export interface LabelProps {
+	label: string;
+	htmlfor:string;
+}
+
+export interface InputWithLabelProps{
+	label: LabelProps;
+	input: InputProps
+}
