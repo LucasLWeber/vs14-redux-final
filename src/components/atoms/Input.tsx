@@ -1,7 +1,7 @@
 import { InputProps } from "../../utils/interfaces";
 
-export default function Input({...inputProps}:InputProps){
+export default function Input({ register, name, type, placeholder }: InputProps & { register: any }) {
     return (
-        <input name={inputProps.name} type={inputProps.typeInput} placeholder={inputProps.placeholder}/>
-    )
+        <input {...register(name)} type={type} placeholder={placeholder} />
+    );
 }

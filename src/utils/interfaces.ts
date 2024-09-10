@@ -1,3 +1,9 @@
+import { UseFormRegister } from "react-hook-form";
+
+export interface LoginValues {
+    email: string;
+    password: string;
+}
 export interface TitleProps{
 	content: string;
 }
@@ -35,7 +41,7 @@ export interface CardProps {
 }
 
 export interface InputProps {
-	typeInput: string;
+	type: string;
 	placeholder: string;
 	name: string;
 }
@@ -47,8 +53,10 @@ export interface LabelProps {
 
 export interface InputWithLabelProps{
 	label: LabelProps;
-	input: InputProps
+	input: InputProps;
+	register: UseFormRegister<LoginValues>;
 }
+
 export interface CartCounterProps{
 	counter: number;
 }
