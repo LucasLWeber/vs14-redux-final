@@ -1,0 +1,29 @@
+import { Link } from "react-router-dom";
+import { CheckoutModalProps } from "../../utils/interfaces";
+import { Button } from "../atoms/Button";
+import { CheckoutButton } from "../atoms/Checkout/CheckoutButton";
+import { CheckoutButtonSecondary } from "../atoms/Checkout/CheckoutButtonSecondary";
+import { Subtitle } from "../atoms/Subtitle";
+import { ProductItem } from "../molecules/Checkout/ProductItem";
+
+export function CheckoutModal({ isOpen, onClose }: CheckoutModalProps){
+	return(
+		<div 
+			className={`fixed top-0 right-0 h-screen w-1/4 bg-white shadow-lg transition-transform transform ${isOpen ? "translate-x-0" : "translate-x-full"} ease-in-out duration-300 px-6`}
+		>
+			<div className="flex justify-between items-center w-full mb-8 py-4">
+				<Subtitle content="Carrinho de Compras" />
+				<button onClick={onClose} className="poppins-regular p-2 text-xl text-gray-500">x</button>
+			</div>
+			<ProductItem />
+			<div className="w-full flex items-center justify-center mt-32 gap-x-4">
+				<Link to={'/finalizar'} onClick={onClose}>
+					<CheckoutButton text="Finalizar" type="button" />
+				</Link>
+				<Link to={'/'} onClick={onClose}>
+					<CheckoutButtonSecondary text="Continuar comprando" type="button" />
+				</Link>
+			</div>
+		</div>
+	);
+}

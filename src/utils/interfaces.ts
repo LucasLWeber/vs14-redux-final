@@ -41,3 +41,8 @@ export interface CardProps {
 export interface CartCounterProps{
 	counter: number;
 }
+
+export interface CheckoutModalProps{
+	isOpen: boolean;
+	onClose: () => void;
+}

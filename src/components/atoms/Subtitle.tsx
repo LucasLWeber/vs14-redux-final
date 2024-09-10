@@ -2,6 +2,6 @@ import { SubtitleProps } from "../../utils/interfaces";
 
 export function Subtitle({ content }: SubtitleProps){
 	return(
-		<h2 className="poppins-regular text-lg text-custom-black">{content}</h2>
+		<h2 className="poppins-regular text-2xl text-custom-black">{content}</h2>
 	);
 }
