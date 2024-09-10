@@ -2,7 +2,7 @@ import { Card } from "../molecules/Card";
 
 export function ProductList(){
 	return(
-		<div className="flex gap-12">
+		<div className="flex gap-12 flex-wrap">
 			<Card 
 				cardImageProps={{url: '/assets/camera.jpg', alt: 'Câmera fotográfica'}}
 				cardTitleProps={{content: 'Câmera Fotográfica'}}
