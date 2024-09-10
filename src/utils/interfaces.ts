@@ -49,3 +49,6 @@ export interface InputWithLabelProps{
 	label: LabelProps;
 	input: InputProps
 }
+export interface CartCounterProps{
+	counter: number;
+}
