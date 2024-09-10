@@ -33,3 +33,16 @@ export interface CardProps {
 	priceProps: PriceProps;
 	buttonProps?: ButtonProps;
 }
+
+export interface CredentialResponse {
+	profileObj?: {
+	  name: string;
+	  email: string;
+	  imageUrl: string;
+	};
+	tokenId?: string;
+  }
+  
+  export interface ButtonGoogleLoginProps {
+	credentialResponse: (response: CredentialResponse) => void;
+  }
