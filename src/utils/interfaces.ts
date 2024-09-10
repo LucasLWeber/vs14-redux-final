@@ -2,6 +2,10 @@ export interface TitleProps{
 	content: string;
 }
 
+export interface SubtitleProps{
+	content: string;
+}
+
 export interface CardImageProps{
 	url: string;
 	alt: string;
