@@ -1,10 +1,10 @@
-interface CardImageProps{
-	url: string;
-	alt: string;
-}
+import { CardImageProps } from "../../../utils/interfaces";
 
 export function CardImage({ url, alt }: CardImageProps){
 	return(
-		<img src={url} alt={alt} />
+		<img 
+			className="object-fit h-full"
+			src={url} alt={alt}
+		/>
 	);
 }

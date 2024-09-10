@@ -1,9 +1,4 @@
-interface IconProps {
-	url: string;
-	alt: string;
-	heigth: string;
-	width: string;
-}
+import { IconProps } from "../../utils/interfaces";
 
 export function Icon({ url, alt, heigth, width }: IconProps){
 	return(

@@ -1,9 +1,11 @@
-interface PriceProps{
-	value: number
-}
+import { PriceProps } from "../../../utils/interfaces";
 
 export function Price({value}: PriceProps){
 	return(
-		<span>R$ {value}</span>
+		<span
+			className="text-custom-black text-base"
+		>
+			R$ {value}
+		</span>
 	);
 }

@@ -1,6 +1,4 @@
-interface CardTitleProps{
-	content: string;
-}
+import { CardTitleProps } from "../../../utils/interfaces";
 
 export function CardTitle({ content }: CardTitleProps){
 	return(
