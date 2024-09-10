@@ -2,6 +2,10 @@ export interface TitleProps{
 	content: string;
 }
 
+export interface SubtitleProps{
+	content: string;
+}
+
 export interface CardImageProps{
 	url: string;
 	alt: string;
@@ -34,15 +38,11 @@ export interface CardProps {
 	buttonProps?: ButtonProps;
 }
 
-export interface CredentialResponse {
-	profileObj?: {
-	  name: string;
-	  email: string;
-	  imageUrl: string;
-	};
-	tokenId?: string;
-  }
-  
-  export interface ButtonGoogleLoginProps {
-	credentialResponse: (response: CredentialResponse) => void;
-  }
+export interface CartCounterProps{
+	counter: number;
+}
+
+export interface CheckoutModalProps{
+	isOpen: boolean;
+	onClose: () => void;
+}
