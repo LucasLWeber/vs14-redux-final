@@ -33,3 +33,7 @@ export interface CardProps {
 	priceProps: PriceProps;
 	buttonProps?: ButtonProps;
 }
+
+export interface CartCounterProps{
+	counter: number;
+}
