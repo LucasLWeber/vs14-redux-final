@@ -2,6 +2,10 @@ export interface TitleProps{
 	content: string;
 }
 
+export interface SubtitleProps{
+	content: string;
+}
+
 export interface CardImageProps{
 	url: string;
 	alt: string;
@@ -36,4 +40,9 @@ export interface CardProps {
 
 export interface CartCounterProps{
 	counter: number;
+}
+
+export interface CheckoutModalProps{
+	isOpen: boolean;
+	onClose: () => void;
 }

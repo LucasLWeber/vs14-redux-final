@@ -8,6 +8,7 @@ export default {
         extend: {
             colors: {
                 "custom-green": "#56B280",
+                "hover-green": "#2A794E",
                 "custom-black": "#1D252C"
             }
         },
