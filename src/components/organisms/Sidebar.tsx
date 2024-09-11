@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
+import { MdLogout } from "react-icons/md";
+import { removeToken } from "../../utils/functions";
+import { useNavigate } from "react-router-dom";
 
 interface MenuItem {
   title: string;
@@ -9,6 +12,7 @@ interface MenuItem {
 }
 
 const Sidebar: React.FC = () => {
+  const navigate = useNavigate();
   const usuario = useSelector((state: RootState) => state.user.usuario);
   const [open, setOpen] = useState<boolean>(true);
   const [isEditing, setIsEditing] = useState<boolean>(false);
@@ -19,8 +23,13 @@ const Sidebar: React.FC = () => {
   const Menus: MenuItem[] = [
     { title: "Accounts", src: "user", gap: true },
     { title: "Setting", src: "setting" },
-  ];
 
+  ];
+  const handleLogout =  () => {
+    removeToken();
+    navigate("/login")
+    
+  }
   const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
@@ -86,7 +95,15 @@ const Sidebar: React.FC = () => {
                 {Menu.title}
               </span>
             </li>
-          ))}
+          ))
+          }
+
+          <li onClick={handleLogout}  className="flex rounded-md p-2 cursor-pointer hover:bg-hover-green text-gray-300 text-sm items-center gap-x-4">
+              <MdLogout  color="" style={{
+                color: "#C7C7C7"
+              }} size={28}/>
+              <span className={`${!open && "hidden"} origin-left duration-200`} >Sair</span>
+          </li>
         </ul>
       </div>
 
