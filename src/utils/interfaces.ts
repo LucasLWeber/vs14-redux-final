@@ -38,7 +38,6 @@ export interface ButtonProps{
 	text: string;
 	type: "submit" | "reset" | "button";
 	addItemIntoCart?: () => void;
-	isDisabled?: boolean;
 }
 
 export interface IconProps {

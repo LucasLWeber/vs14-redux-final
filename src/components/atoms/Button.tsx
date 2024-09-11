@@ -6,13 +6,12 @@ import { useDispatch } from 'react-redux';
 import { setToken } from '../../utils/functions';
 import { useNavigate } from 'react-router-dom';
 
-export function Button({ text, type, addItemIntoCart, isDisabled }: ButtonProps){
+export function Button({ text, type, addItemIntoCart }: ButtonProps){
 	return(
 		<button 
-			className={!isDisabled ? `bg-custom-green text-white px-2 py-1 rounded text-sm hover:bg-hover-green shadow` : `bg-custom-black hover:bg-custom-black text-white px-2 py-1 rounded text-sm shadow`}
+			className="bg-custom-green text-white px-2 py-1 rounded text-sm hover:bg-hover-green shadow"
 			type={type}
 			onClick={addItemIntoCart}
-			disabled={isDisabled}
 		>
 			{text}
 		</button>

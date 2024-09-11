@@ -1,19 +1,7 @@
 import { useGetAllProductsQuery } from "../../services/productsApi";
+import { Product } from "../../utils/interfaces";
 import { Subtitle } from "../atoms/Subtitle";
 import { Card } from "../molecules/Card";
-
-interface Product {
-  id: number;
-  title: string;
-  price: number;
-  description: string;
-  category: "eletronics";
-  image: string;
-  rating: {
-    rate: number;
-    count: number;
-  };
-}
 
 interface ProductListProps {
   filter: string;
@@ -21,7 +9,6 @@ interface ProductListProps {
 
 export function ProductList({ filter }: ProductListProps) {
   const { data: products, error, isLoading } = useGetAllProductsQuery();
-	console.log(products);
 	
   if (isLoading) {
     return <Subtitle content="Carregando lista de produtos..." />;
@@ -59,7 +46,7 @@ export function ProductList({ filter }: ProductListProps) {
 
 	return(
 		<div className="flex gap-12 flex-wrap justify-center">
-			{products?.map((product) => (
+			{sortedProducts?.map((product) => (
 				<Card 
 				key={product.id}
 				product={product} 

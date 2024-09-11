@@ -14,7 +14,7 @@ interface MenuItem {
 const Sidebar: React.FC = () => {
   const navigate = useNavigate();
   const usuario = useSelector((state: RootState) => state.user.usuario);
-  const [open, setOpen] = useState<boolean>(true);
+  const [open, setOpen] = useState<boolean>(false);
   const [isEditing, setIsEditing] = useState<boolean>(false);
   const [name, setName] = useState<string>(usuario?.name);
   const [email, setEmail] = useState<string>(usuario?.email);
