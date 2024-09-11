@@ -20,7 +20,7 @@ export function CheckoutModal({ isOpen, onClose }: CheckoutModalProps){
 				<Link to={'/finalizar'} onClick={onClose}>
 					<CheckoutButton text="Finalizar" type="button" />
 				</Link>
-				<Link to={'/'} onClick={onClose}>
+				<Link to={'/produtos'} onClick={onClose}>
 					<CheckoutButtonSecondary text="Continuar comprando" type="button" />
 				</Link>
 			</div>
