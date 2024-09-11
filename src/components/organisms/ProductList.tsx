@@ -1,23 +1,29 @@
+import { useGetAllProductsQuery } from "../../services/productsApi";
+import { Subtitle } from "../atoms/Subtitle";
 import { Card } from "../molecules/Card";
 
 export function ProductList(){
+	const { data: products, error, isLoading } = useGetAllProductsQuery();
+
+	if(isLoading){
+		return <Subtitle content="Carregando lista de produtos..." />
+	}
+
+	if(error){
+		return <Subtitle content="Erro ao carregar lista de produtos..." />
+	}
+
 	return(
 		<div className="flex gap-12 flex-wrap">
-			<Card 
-				cardImageProps={{url: '/assets/camera.jpg', alt: 'Câmera fotográfica'}}
-				cardTitleProps={{content: 'Câmera Fotográfica'}}
-				priceProps={{ value: 1249 }}
+			{products?.map((product) => (
+				<Card 
+				cardImageProps={{url: product.image, alt: product.title}}
+				cardTitleProps={{content: product.title}}
+				rateProps={{value: product.rating.rate}}
+				itemInStock={{value: product.rating.count}}
+				priceProps={{ value: product.price }}
 			/>
-			<Card 
-				cardImageProps={{url: '/assets/chair.jpeg', alt: 'Cadeira Gamer' }}
-				cardTitleProps={{content: 'Cadeira Gamer'}}
-				priceProps={{ value: 899 }}
-			/>
-			<Card 
-				cardImageProps={{url: '/assets/computer.jpeg', alt: 'Computador Gamer'}}
-				cardTitleProps={{content: 'Computador Gamer'}}
-				priceProps={{ value: 4599 }}
-			/>
+			))}
 		</div>
 	);
 }
