@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { CheckoutModalProps } from "../../utils/interfaces";
-import { Button } from "../atoms/Button";
 import { CheckoutButton } from "../atoms/Checkout/CheckoutButton";
 import { CheckoutButtonSecondary } from "../atoms/Checkout/CheckoutButtonSecondary";
 import { Subtitle } from "../atoms/Subtitle";

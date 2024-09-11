@@ -25,9 +25,6 @@ DBC Electronics é uma aplicação de e-commerce construída com React, que segu
 ---
 
 
-
-
-
 ### 🚀 Sprint 1
 
 - Estrutura do Atomic Design já com as prévia dos componentes e arquivos tsx básicos
@@ -35,3 +32,15 @@ DBC Electronics é uma aplicação de e-commerce construída com React, que segu
 - Layout da aplicação - cores e acessibilidade;
 - Estrutura de cards do e-comerce já com as cores e responsivo; 
 
+
+### 🚀 Sprint 2
+
+- Login --> área de login personalizada
+- Formulário de login - mínimo campo para nome, email e senha com validação adequada;
+- Autenticação: implementar rostas privadas e autenticação conforme trabalhado em aula (armazenamento seguro de token);
+- Redirecionamento para área restrita onde o user poderá:
+- Fazer upload de foto e editar a foto. A imagem e nome do user logado precisa aparecer na Barnav e em todas as rotas da aplicação;
+- Configuração de privacidade do user  - o user pode definir que infos poderão aparecer na tela geral qdo ele estiver logado;
+
+Login:
+- Implementar o login do Google -- Integrar o Login do Google no seu app da Web | Authentication;
