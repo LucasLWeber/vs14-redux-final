@@ -14,7 +14,7 @@ export function ProductList(){
 	}
 
 	return(
-		<div className="flex gap-12 flex-wrap">
+		<div className="flex gap-12 flex-wrap justify-center">
 			{products?.map((product) => (
 				<Card 
 				key={product.id}
