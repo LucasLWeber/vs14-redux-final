@@ -5,8 +5,8 @@ export default function Filter (){
             <option value="menorPreco">Meno preço </option>
             <option value="maiorQuantidade">Menor quantidade </option>
             <option value="menosQuantidade">Maior quantidade</option>
-            <option value="maiscaro">Maior avaliação</option>
-            <option value="maiscaro">Menor Avaliação</option>
+            <option value="maisAvaliado">Maior avaliação</option>
+            <option value="menosAvaliado">Menor Avaliação</option>
         </select>
     )
 }
