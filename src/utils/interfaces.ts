@@ -1,7 +1,7 @@
 import { UseFormRegister } from "react-hook-form";
 
 export interface LoginValues {
-    email: string;
+	username: string;
     password: string;
 }
 
@@ -75,6 +75,13 @@ export interface Usuario {
 	name: string;
 	email: string;
 	picture: string;
+}
+
+export interface UsuarioState{
+	usuario: Usuario;
+	loading: boolean;
+	status: 'idle' | 'loading' | 'succeeded' | 'failed';
+	error: string  | null
 }
 
   export interface ButtonGoogleLoginProps {
