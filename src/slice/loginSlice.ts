@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Usuario, UsuarioState } from '../utils/interfaces';
 import axios from 'axios';
+import { setToken } from '../utils/functions';
 
 
 const initialState: UsuarioState = {
@@ -18,15 +19,16 @@ const initialState: UsuarioState = {
 export const fetchLogin = createAsyncThunk(
   'users/login',
   async ({ username, password }: { username: string; password: string }) => {
+ 
     try {
       const response = await axios.post('https://fakestoreapi.com/auth/login', {
         username,
         password
       });
       const data = response.data;
-      console.log(data);
-      localStorage.setItem('token', data.token)
       
+      setToken(data.token)
+     
     } catch (error) {
      
       throw new Error('Erro ao realizar login');
