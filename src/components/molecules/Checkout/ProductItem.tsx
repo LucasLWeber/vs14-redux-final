@@ -3,6 +3,7 @@ import { IncrementButton } from "../../atoms/Checkout/IncrementButton";
 import { ProductImage } from "../../atoms/Checkout/ProductImage";
 import { ProductName } from "../../atoms/Checkout/ProductName";
 import { ProductQuantity } from "../../atoms/Checkout/ProductQuantity";
+import { RemoveButton } from "../../atoms/Checkout/RemoveButton";
 
 export function ProductItem(){
 	return(
@@ -12,6 +13,7 @@ export function ProductItem(){
 				<ProductName />
 			</div>
 			<div className="flex gap-x-4 items-center">
+				<RemoveButton />
 				<DecrementButton />
 				<ProductQuantity />
 				<IncrementButton />
