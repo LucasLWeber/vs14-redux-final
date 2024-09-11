@@ -1,10 +1,9 @@
-import { Title } from "../atoms/Title";
 import LoginForm from "../organisms/LoginForm";
 
 export default function Login (){
     return(
-        <main>
-            <Title content="Login"/>
+        <main className="flex flex-col items-center justify-center max-w-full bg-custom-green p-8 gap-4 rounded-xl">
+            <h1 className="poppins-semibold text-3xl text-custom-black text-white">Login</h1>
             <LoginForm/>
         </main>
     )

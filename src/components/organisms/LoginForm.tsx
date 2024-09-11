@@ -12,7 +12,7 @@ export default function LoginForm() {
     };
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form className="flex flex-col items-center p-4 gap-4 bg-white rounded-xl" onSubmit={handleSubmit(onSubmit)}>
             <InputWithLabel 
                 input={{ name: "email", placeholder: "exameplo@email.com", type: "email" }} 
                 label={{ htmlfor: "email", label: "Email" }} 
