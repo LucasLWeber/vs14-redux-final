@@ -4,7 +4,12 @@ export interface LoginValues {
     email: string;
     password: string;
 }
+
 export interface TitleProps{
+	content: string;
+}
+
+export interface SubtitleProps{
 	content: string;
 }
 
@@ -60,3 +65,17 @@ export interface InputWithLabelProps{
 export interface CartCounterProps{
 	counter: number;
 }
+
+export interface CheckoutModalProps{
+	isOpen: boolean;
+	onClose: () => void;
+}
+
+export interface Usuario {
+	name: string;
+	email: string;
+	picture: string;
+}
+
+  export interface ButtonGoogleLoginProps {
+	responseGoogle: (usuario: Usuario) => void;}

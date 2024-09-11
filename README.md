@@ -14,6 +14,7 @@ DBC Electronics é uma aplicação de e-commerce construída com React, que segu
 - Tailwindcss: `npm install -D tailwindcss postcss autoprefixer | npx tailwindcss init -p`;
 - React Icons: `npm install react-icons --save`;
 - React Hook Form: `npm install react-hook-form`;
+- React Oauth Google: `npm install @react-oauth/google`;
 - Instalar as dependências: `npm i`;
 
 
