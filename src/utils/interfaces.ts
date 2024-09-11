@@ -37,6 +37,8 @@ export interface CardItemsInStockProps{
 export interface ButtonProps{
 	text: string;
 	type: "submit" | "reset" | "button";
+	addItemIntoCart?: () => void;
+	isDisabled?: boolean;
 }
 
 export interface IconProps {
@@ -72,10 +74,6 @@ export interface InputWithLabelProps{
 	register: UseFormRegister<LoginValues>;
 }
 
-export interface CartCounterProps{
-	counter: number;
-}
-
 export interface CheckoutModalProps{
 	isOpen: boolean;
 	onClose: () => void;
@@ -95,4 +93,49 @@ export interface UsuarioState{
 }
 
   export interface ButtonGoogleLoginProps {
-	responseGoogle: (usuario: Usuario) => void;}
+	responseGoogle: (usuario: Usuario) => void;
+}
+
+export interface Product {
+	id: number;
+	title: string;
+	price: number;
+	description: string;
+	category: "eletronics";
+	image: string;
+	rating: {
+		rate: number;
+		count: number
+	}
+}
+
+export interface ProductImageOnCartProps{
+	path: string;
+	name: string;
+}
+
+export interface ProductNameOnCartProps{
+	name: string;
+}
+
+export interface ProductItemProps{
+	image?: ProductImageOnCartProps;
+	name?: ProductNameOnCartProps
+	id?: number
+}
+
+export interface DecrementButtonProps {
+	decrementFunction: () => void;
+}
+
+export interface IncrementButtonProps {
+	incrementFunction: () => void;
+}
+
+export interface RemoveButtonProps{
+	clearFunction: () => void;
+}
+
+export interface ProductQuantityProps{
+	quantity: number;
+}

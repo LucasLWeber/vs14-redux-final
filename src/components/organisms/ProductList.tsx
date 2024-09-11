@@ -57,18 +57,19 @@ export function ProductList({ filter }: ProductListProps) {
   
   const sortedProducts = sortProducts(products || []);
 
-  return (
-    <div className="flex gap-12 flex-wrap justify-center">
-      {sortedProducts.map((product) => (
-        <Card
-          key={product.id}
-          cardImageProps={{ url: product.image, alt: product.title }}
-          cardTitleProps={{ content: product.title }}
-          rateProps={{ value: product.rating.rate }}
-          itemInStock={{ value: product.rating.count }}
-          priceProps={{ value: product.price }}
-        />
-      ))}
-    </div>
-  );
+	return(
+		<div className="flex gap-12 flex-wrap justify-center">
+			{products?.map((product) => (
+				<Card 
+				key={product.id}
+				product={product} 
+				cardImageProps={{url: product.image, alt: product.title}}
+				cardTitleProps={{content: product.title}}
+				rateProps={{value: product.rating.rate}}
+				itemInStock={{value: product.rating.count}}
+				priceProps={{ value: product.price }}
+			/>
+			))}
+		</div>
+	);
 }

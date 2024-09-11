@@ -1,7 +1,7 @@
-export function ProductName(){
-	// TODO -> pegar do gerenciador de estado global
-	const name = "Computador"
+import { Product } from "../../../utils/interfaces";
+
+export function ProductName({ ...props }: Product ){
 	return(
-		<p className="text-base text-custom-black">{name}</p>
+		<p className="text-base text-custom-black">{props.title}</p>
 	);
 }
