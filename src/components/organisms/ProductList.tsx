@@ -18,6 +18,7 @@ export function ProductList(){
 			{products?.map((product) => (
 				<Card 
 				key={product.id}
+				product={product} 
 				cardImageProps={{url: product.image, alt: product.title}}
 				cardTitleProps={{content: product.title}}
 				rateProps={{value: product.rating.rate}}

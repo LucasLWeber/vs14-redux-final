@@ -1,23 +1,17 @@
-import { DecrementButton } from "../../atoms/Checkout/DecrementButton";
-import { IncrementButton } from "../../atoms/Checkout/IncrementButton";
+import { ProductItemProps } from "../../../utils/interfaces";
 import { ProductImage } from "../../atoms/Checkout/ProductImage";
-import { ProductName } from "../../atoms/Checkout/ProductName";
-import { ProductQuantity } from "../../atoms/Checkout/ProductQuantity";
-import { RemoveButton } from "../../atoms/Checkout/RemoveButton";
+import { ProductActionButtons } from "./ProductActionButtons";
 
-export function ProductItem(){
+
+export function ProductItem({ image, id }: ProductItemProps){
 	return(
 		<div className="flex items-center justify-between border-b-1 border-gray-100 my-4">
 			<div className="flex gap-x-4 items-center">
-				<ProductImage />
-				<ProductName />
+				{image && (
+					<ProductImage name={image.name} path={image.path}/>
+				)}
 			</div>
-			<div className="flex gap-x-4 items-center">
-				<RemoveButton />
-				<DecrementButton />
-				<ProductQuantity />
-				<IncrementButton />
-			</div>
+			<ProductActionButtons id={id}/>
 		</div>
 	);
 }
