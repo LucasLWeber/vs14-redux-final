@@ -17,13 +17,11 @@ export function PrivateRoute() {
       email: decoded.email,
       picture: decoded.picture
       }));
-      return token ? <Outlet /> : <Navigate to="/login"/>
     } catch (error) {
       throw new Error("Erro ao decodificar o token:" + error);
     }
-    } else {
-      throw new Error("Token não fornecido");
-    }
+  }
+  return token ? <Outlet /> : <Navigate to="/login"/>
 }
 
 
