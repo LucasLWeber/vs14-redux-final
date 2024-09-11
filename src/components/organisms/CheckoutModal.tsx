@@ -7,6 +7,7 @@ import { ProductItem } from "../molecules/Checkout/ProductItem";
 import { RootState } from "../../store/store";
 import { useSelector } from "react-redux";
 import { useMemo } from "react";
+import { Subtotal } from "../atoms/Checkout/Subtotal";
 
 export function CheckoutModal({ isOpen, onClose }: CheckoutModalProps){
 	const cart = useSelector((state: RootState) => state.cart.cart)
@@ -38,9 +39,9 @@ export function CheckoutModal({ isOpen, onClose }: CheckoutModalProps){
 					id={item.id}
 				/>
 			))}
-
-
-			<div className="w-full flex items-center justify-center mt-32 gap-x-4 gap-y-4 flex-wrap">
+			<hr className="my-4"/>
+			<Subtotal />
+			<div className="w-full flex items-center justify-center mt-8 gap-x-4 gap-y-4 flex-wrap">
 				<Link to={'/finalizar'} onClick={onClose}>
 					<CheckoutButton text="Finalizar" type="button" />
 				</Link>
