@@ -34,7 +34,7 @@ const Sidebar: React.FC = () => {
   };
 
   return (
-    <div className="flex fixed left-0 top-[77px]">
+    <div className="flex fixed left-0 top-0">
       <div
         className={`${
           open ? "w-72" : "w-20"

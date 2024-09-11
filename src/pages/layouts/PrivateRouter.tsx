@@ -23,5 +23,3 @@ export function PrivateRoute() {
   }
   return token ? <Outlet /> : <Navigate to="/login"/>
 }
-
-
