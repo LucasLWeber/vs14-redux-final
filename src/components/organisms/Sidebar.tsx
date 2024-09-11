@@ -38,7 +38,7 @@ const Sidebar: React.FC = () => {
       <div
         className={`${
           open ? "w-72" : "w-20"
-        } bg-custom-black h-screen p-5 pt-8 relative duration-300`}
+        } bg-custom-black h-screen p-3 pt-8 relative duration-300`}
       >
         <img
           src="../../../public/assets/control.png"

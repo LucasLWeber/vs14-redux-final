@@ -3,7 +3,6 @@ import { Usuario, UsuarioState } from '../utils/interfaces';
 import axios from 'axios';
 import { setToken } from '../utils/functions';
 
-
 const initialState: UsuarioState = {
   usuario: {
     name: '',
