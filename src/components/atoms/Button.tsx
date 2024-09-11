@@ -3,6 +3,8 @@ import { ButtonProps, Usuario } from "../../utils/interfaces";
 import { jwtDecode } from 'jwt-decode';
 import { setUser } from '../../slice/loginSlice';
 import { useDispatch } from 'react-redux';
+import { setToken } from '../../utils/functions';
+import { useNavigate } from 'react-router-dom';
 
 export function Button({ text, type }: ButtonProps){
 	return(
@@ -15,6 +17,7 @@ export function Button({ text, type }: ButtonProps){
 	);
 }
 export function ButtonGoogleLogin() {
+	const navigate = useNavigate();
 	const dispatch = useDispatch();
   
 	return (
@@ -24,9 +27,13 @@ export function ButtonGoogleLogin() {
 		  if (token) {
 			try {
 			  const decoded: Usuario = jwtDecode(token);
-			  console.log(decoded);
-  
-			  dispatch(setUser(decoded));
+			  dispatch(setUser({
+				name: decoded.name,
+				email: decoded.email,
+				picture: decoded.picture
+			  }));
+			  setToken(token);
+			  navigate("/produtos");
 			} catch (error) {
 			  throw new Error("Erro ao decodificar o token:" + error);
 			}

@@ -17,6 +17,7 @@ export function ProductList(){
 		<div className="flex gap-12 flex-wrap">
 			{products?.map((product) => (
 				<Card 
+				key={product.id}
 				cardImageProps={{url: product.image, alt: product.title}}
 				cardTitleProps={{content: product.title}}
 				rateProps={{value: product.rating.rate}}

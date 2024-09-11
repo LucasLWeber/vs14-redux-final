@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useSelector } from 'react-redux';
+import { RootState } from '../../store/store';
 
 interface MenuItem {
   title: string;
@@ -7,11 +9,12 @@ interface MenuItem {
 }
 
 const Sidebar: React.FC = () => {
+  const usuario = useSelector((state: RootState) => state.user.usuario);
   const [open, setOpen] = useState<boolean>(true);
   const [isEditing, setIsEditing] = useState<boolean>(false);
-  const [name, setName] = useState<string>("Usuario");
-  const [email, setEmail] = useState<string>("usuario@example.com");
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [name, setName] = useState<string>(usuario?.name);
+  const [email, setEmail] = useState<string>(usuario?.email);
+  const [selectedImage, setSelectedImage] = useState<string | null>(usuario?.picture);
 
   const Menus: MenuItem[] = [
     { title: "Accounts", src: "user", gap: true },
@@ -31,7 +34,7 @@ const Sidebar: React.FC = () => {
   };
 
   return (
-    <div className="flex fixed left-0 top-[92px]">
+    <div className="flex fixed left-0 top-[77px]">
       <div
         className={`${
           open ? "w-72" : "w-20"

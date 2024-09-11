@@ -26,9 +26,7 @@ export const fetchLogin = createAsyncThunk(
         password
       });
       const data = response.data;
-      
       setToken(data.token)
-     
     } catch (error) {
      
       throw new Error('Erro ao realizar login');

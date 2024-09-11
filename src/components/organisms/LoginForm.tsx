@@ -1,6 +1,6 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 import InputWithLabel from "../molecules/InputWithLabel";
-import { Button } from "../atoms/Button";
+import { Button, ButtonGoogleLogin } from "../atoms/Button";
 import { LoginValues } from "../../utils/interfaces";
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchLogin } from '../../slice/loginSlice';
@@ -44,6 +44,8 @@ export default function LoginForm() {
             {status === 'failed' && <p className="text-red-500">{error}</p>}
             
             <Button type="submit" text="Acessar" />
+
+			<ButtonGoogleLogin />
         </form>
     );
 }
