@@ -20,6 +20,14 @@ export interface PriceProps{
 	value: number
 }
 
+export interface CardRatingProps{
+	value: number
+}
+
+export interface CardItemsInStockProps{
+	value: number;
+}
+
 export interface ButtonProps{
 	text: string;
 	type: "submit" | "reset" | "button";
@@ -36,6 +44,8 @@ export interface CardProps {
 	cardImageProps: CardImageProps;
 	cardTitleProps: CardTitleProps;
 	priceProps: PriceProps;
+	rateProps: CardRatingProps;
+	itemInStock: CardItemsInStockProps;
 	buttonProps?: ButtonProps;
 }
 
