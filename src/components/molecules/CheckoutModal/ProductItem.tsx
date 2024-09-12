@@ -1,5 +1,5 @@
 import { ProductItemProps } from "../../../utils/interfaces";
-import { ProductImage } from "../../atoms/Checkout/ProductImage";
+import { ProductImage } from "../../atoms/CheckoutModal/ProductImage";
 import { ProductActionButtons } from "./ProductActionButtons";
 
 
