@@ -11,7 +11,6 @@ export function Header(){
 				  <Navbar />
 				  <Tradutor/>
 				</div>
-				
 			</div>
 		</header>
 	);

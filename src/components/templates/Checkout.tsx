@@ -8,10 +8,10 @@ export function Checkout(){
 	return(
 		<>
 			<Header/>
-			<main className="lg:w-4/5 mx-auto flex flex-col gap-y-8">
+			<main className="w-4/5 mx-auto flex flex-col gap-y-8">
 				<Title content="Finalizar compra" />
 				<CheckoutHeadingContainer />
-				<div className="flex gap-x-32">
+				<div className="w-full flex gap-x-32 lg:flex-row flex-col">
 					<CheckoutInfo />
 					<CheckoutProducts />
 				</div>
