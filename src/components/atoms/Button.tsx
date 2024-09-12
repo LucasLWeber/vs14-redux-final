@@ -7,6 +7,7 @@ import { setToken } from '../../utils/functions';
 import { useNavigate } from 'react-router-dom';
 
 export function Button({ text, type, addItemIntoCart }: ButtonProps){
+	
 	return(
 		<button 
 			className="bg-custom-green text-white px-2 py-1 rounded text-sm hover:bg-hover-green shadow"
