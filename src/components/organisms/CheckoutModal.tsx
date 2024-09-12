@@ -25,7 +25,7 @@ export function CheckoutModal({ isOpen, onClose }: CheckoutModalProps){
 
 	return(
 		<div 
-			className={`fixed top-0 right-0 h-screen lg:w-1/4 w-3/4 bg-white shadow-lg transition-transform transform ${isOpen ? "translate-x-0" : "translate-x-full"} ease-in-out duration-300 px-6`}
+			className={`fixed top-0 right-0 h-screen lg:w-1/4  w-3/4 bg-white shadow-lg transition-transform transform ${isOpen ? "translate-x-0" : "translate-x-full"} ease-in-out duration-300 px-6`}
 		>
 			<div className="flex justify-between items-center w-full mb-8 py-4">
 				<Subtitle content="Carrinho de Compras" />

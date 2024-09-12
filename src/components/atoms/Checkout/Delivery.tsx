@@ -41,11 +41,11 @@ export function Delivery() {
 				value={cep}
 				onChange={handleCepChange}
 				placeholder="Digite seu CEP"
-				className="border rounded"
+				className="border rounded-sm max-w-1/4"
 				/>
 				<button
-				type="submit"
-				className="bg-custom-green text-white px-2 py-1 rounded text-sm hover:bg-hover-green shadow"
+					type="submit"
+					className="bg-custom-green text-white px-2 py-1 rounded-sm text-sm hover:bg-hover-green shadow"
 				>
 				Calcular Frete
 				</button>
