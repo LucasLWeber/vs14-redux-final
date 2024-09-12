@@ -1,7 +1,7 @@
-import { Product } from "../../../utils/interfaces";
+import { ProductNameOnCartProps } from "../../../utils/interfaces";
 
-export function ProductName({ ...props }: Product ){
+export function ProductName({ name }: ProductNameOnCartProps){
 	return(
-		<p className="text-base text-custom-black">{props.title}</p>
+		<p className="text-xs text-custom-black max-w-60">{name}</p>
 	);
 }

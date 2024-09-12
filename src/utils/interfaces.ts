@@ -112,7 +112,7 @@ export interface Product {
 
 export interface ProductImageOnCartProps{
 	path: string;
-	name: string;
+	name?: string;
 }
 
 export interface ProductNameOnCartProps{
