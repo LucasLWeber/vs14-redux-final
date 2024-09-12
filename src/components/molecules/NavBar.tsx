@@ -5,14 +5,14 @@ import { CheckoutModal } from "../organisms/CheckoutModal";
 
 export function Navbar() {
   const [isModalOpen, setModalOpen] = useState(false); 
-  const [counter, setCounter] = useState(0);
+  const [counter, setCounter] = useState<number>(0);
 
   const toggleModal = () => {
     setModalOpen(!isModalOpen);
   };
 
   return (
-    <nav>
+    <nav className="flex itens-center">
       <ul className="flex items-center justify-center gap-x-8">
         <div className="relative">
           <button onClick={toggleModal}>

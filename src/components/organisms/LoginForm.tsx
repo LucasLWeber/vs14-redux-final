@@ -8,8 +8,10 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { setToken } from "../../utils/functions";
+import { useTranslation } from 'react-i18next';
 
 export default function LoginForm() {
+    const { t } = useTranslation();
     const { register, handleSubmit } = useForm<LoginValues>();
     const navigate = useNavigate();
     
@@ -36,13 +38,13 @@ export default function LoginForm() {
             <form className="flex flex-col items-center p-4 gap-4 bg-white rounded-xl" onSubmit={handleSubmit(onSubmit)}>
                 <InputWithLabel 
                     input={{ name: "username", placeholder: "alisson", type: "text" }} 
-                    label={{ htmlfor: "username", label: "Nome" }} 
+                    label={{ htmlfor: "username", label: `${t('emailLabel')}`}} 
                     register={register}
                 />
 
                 <InputWithLabel 
                     input={{ name: "password", placeholder: "*******", type: "password" }} 
-                    label={{ htmlfor: "password", label: "Senha" }} 
+                    label={{ htmlfor: "password", label: `${t('senhaLabel')}` }} 
                     register={register}
                 />
 
