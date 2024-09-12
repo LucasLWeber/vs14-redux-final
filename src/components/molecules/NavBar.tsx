@@ -11,7 +11,7 @@ export function Navbar() {
   };
 
   return (
-    <nav>
+    <nav className="flex">
       <ul className="flex items-center justify-center gap-x-8">
         <div className="relative">
           <button onClick={toggleModal}>
