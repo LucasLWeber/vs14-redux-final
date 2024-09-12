@@ -14,7 +14,8 @@ export function ProductList({ filter }: ProductListProps) {
   
   const { data: products, error, isLoading } = useGetAllProductsQuery();
   const favorites = useSelector((state: RootState) => state.favorites.favoriteProducts);
-	
+	console.log(error);
+  
   if (isLoading) {
     return <Subtitle content="Carregando lista de produtos..." />;
   }

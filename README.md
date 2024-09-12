@@ -20,7 +20,7 @@ DBC Electronics é uma aplicação de e-commerce construída com React, que segu
 
 ### 🔗 Links
 
-🎨 [Figma](https://w	ww.figma.com/design/RgQkL1ndQyf3u1SYp9sZOQ/E-Commerce-UI-KIT-(Community)?node-id=116-92&node-type=CANVAS&t=mBFrTik4pzyRx5AV-0)  |  💻 [GitHub](https://github.com/LucasLWeber/vs14-redux-final)  |  🎯 [Documentação API](https://fakestoreapi.com/products)  |  🟢 [Rota especifica](https://fakestoreapi.com/products/category/electronics)
+🎨 [Figma](https://www.figma.com/design/RgQkL1ndQyf3u1SYp9sZOQ/E-Commerce-UI-KIT-(Community)?node-id=116-92&node-type=CANVAS&t=mBFrTik4pzyRx5AV-0)  |  💻 [GitHub](https://github.com/LucasLWeber/vs14-redux-final)  |  🎯 [Documentação API](https://fakestoreapi.com/products)  |  🟢 [Rota especifica](https://fakestoreapi.com/products/category/electronics)
 
 ---
 

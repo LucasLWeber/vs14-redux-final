@@ -5,6 +5,7 @@ import { CheckoutModal } from "../organisms/CheckoutModal";
 
 export function Navbar() {
   const [isModalOpen, setModalOpen] = useState(false); 
+  const [counter, setCounter] = useState<number>(0);
 
   const toggleModal = () => {
     setModalOpen(!isModalOpen);
@@ -16,7 +17,7 @@ export function Navbar() {
         <div className="relative">
           <button onClick={toggleModal}>
             <Icon url="/assets/Cart.svg" alt="Carrinho de compras" heigth="29" width="29" />
-            <CartCounter />
+            <CartCounter counter={counter} />
           </button>
         </div>
       </ul>

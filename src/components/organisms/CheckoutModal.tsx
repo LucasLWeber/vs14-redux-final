@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
 import { CheckoutModalProps } from "../../utils/interfaces";
-import { CheckoutButton } from "../atoms/CheckoutModal/CheckoutButton";
-import { CheckoutButtonSecondary } from "../atoms/CheckoutModal/CheckoutButtonSecondary";
+import { CheckoutButton } from "../atoms/Checkout/CheckoutButton";
+import { CheckoutButtonSecondary } from "../atoms/Checkout/CheckoutButtonSecondary";
 import { Subtitle } from "../atoms/Subtitle";
-import { ProductItem } from "../molecules/CheckoutModal/ProductItem";
+import { ProductItem } from "../molecules/Checkout/ProductItem";
 import { RootState } from "../../store/store";
 import { useSelector } from "react-redux";
 import { useMemo } from "react";
+import { Subtotal } from "../atoms/Checkout/Subtotal";
 import { useTranslation } from "react-i18next";
-import { Subtotal } from "../atoms/CheckoutModal/Subtotal";
 
 export function CheckoutModal({ isOpen, onClose }: CheckoutModalProps){
 	const cart = useSelector((state: RootState) => state.cart.cart)
@@ -36,7 +36,7 @@ export function CheckoutModal({ isOpen, onClose }: CheckoutModalProps){
 			{renderedProducts.map(item => (
 				<ProductItem
 					key={item.id}
-					image={{ path: item.image}}
+					image={{name: item.title, path: item.image}}
 					id={item.id}
 				/>
 			))}

@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
 import { ProductItemProps } from "../../../utils/interfaces";
-import { DecrementButton } from "../../atoms/CheckoutModal/DecrementButton";
-import { IncrementButton } from "../../atoms/CheckoutModal/IncrementButton";
-import { ProductQuantity } from "../../atoms/CheckoutModal/ProductQuantity";
-import { RemoveButton } from "../../atoms/CheckoutModal/RemoveButton";
+import { DecrementButton } from "../../atoms/Checkout/DecrementButton";
+import { IncrementButton } from "../../atoms/Checkout/IncrementButton";
+import { ProductQuantity } from "../../atoms/Checkout/ProductQuantity";
+import { RemoveButton } from "../../atoms/Checkout/RemoveButton";
 import { clearEspecifProduct, decrementProduct, incrementProduct } from "../../../slice/cartSlice";
 import { RootState } from "../../../store/store";
 

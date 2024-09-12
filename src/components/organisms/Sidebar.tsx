@@ -52,7 +52,7 @@ const Sidebar: React.FC = () => {
         } bg-custom-black h-screen p-3 pt-8 relative duration-300`}
       >
         <img
-          src="/assets/control.png"
+          src="../../../public/assets/control.png"
           className={`absolute cursor-pointer -right-3 top-9 w-7 border-custom-black border-2 rounded-full ${
             !open && "rotate-180"
           }`}
@@ -92,7 +92,7 @@ const Sidebar: React.FC = () => {
                 }
               }}
             >
-              <img src={`/assets/${Menu.src}.png`} alt={Menu.title} />
+              <img src={`../../../public/assets/${Menu.src}.png`} alt={Menu.title} />
               <span className={`${!open && "hidden"} origin-left duration-200`}>
                 {Menu.title}
               </span>
