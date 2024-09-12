@@ -22,8 +22,6 @@ const Sidebar: React.FC = () => {
 
   const Menus: MenuItem[] = [
     { title: "Accounts", src: "user", gap: true },
-    { title: "Setting", src: "setting" },
-
   ];
   const handleLogout =  () => {
     removeToken();
