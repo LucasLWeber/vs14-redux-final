@@ -26,7 +26,7 @@ export function CheckoutProducts(){
 	  }, [cart]);
 
 	return(
-		<div className="flex flex-col w-1/2">
+		<div className="flex flex-col lg:w-1/2 w-full lg:mt-0 mt-4">
 			{renderedProducts.map((produtc) => 
 				<ProductItem id={produtc.id} image={{path: produtc.image, name: produtc.title}} />
 			)}

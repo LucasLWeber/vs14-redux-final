@@ -31,6 +31,12 @@ DBC Electronics é uma aplicação de e-commerce construída com React, que segu
     🔑 **Senha:** Alissonf@7
 
 
+### ⚙ .env
+
+VITE_CLIENT_ID=
+VITE_PRODUCT_API_URL=
+
+
 ### 🚀 Sprint 1
 
 - Estrutura do Atomic Design já com as prévia dos componentes e arquivos tsx básicos

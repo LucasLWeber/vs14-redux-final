@@ -3,11 +3,13 @@ import { calcularFrete } from '../../../slice/freteSlice';
 import { RootState, AppDispatch } from '../../../store/store';
 import { useEffect, useState } from 'react';
 import { setFreteValor } from '../../../slice/freteValorSlice';
+import { useTranslation } from 'react-i18next';
 
 export function Delivery() {
   const dispatch = useDispatch<AppDispatch>();
   const { dados, status, error } = useSelector((state: RootState) => state.frete);
   const [cep, setCep] = useState('');
+  const { t } = useTranslation();
 
   const handleCepChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setCep(e.target.value);
@@ -40,14 +42,14 @@ export function Delivery() {
 				type="text"
 				value={cep}
 				onChange={handleCepChange}
-				placeholder="Digite seu CEP"
-				className="border rounded"
+				placeholder={t('finalizar.cepPlaceholder')}
+				className="border rounded-sm max-w-1/4"
 				/>
 				<button
-				type="submit"
-				className="bg-custom-green text-white px-2 py-1 rounded text-sm hover:bg-hover-green shadow"
+					type="submit"
+					className="bg-custom-green text-white px-2 py-1 rounded-sm text-sm hover:bg-hover-green shadow"
 				>
-				Calcular Frete
+				{t('finalizar.freteButton')}
 				</button>
 			</div>
 		</form>
