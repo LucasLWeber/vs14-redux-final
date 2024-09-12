@@ -36,7 +36,7 @@ export function CheckoutModal({ isOpen, onClose }: CheckoutModalProps){
 			{renderedProducts.map(item => (
 				<ProductItem
 					key={item.id}
-					image={{name: item.title, path: item.image}}
+					image={{ path: item.image }}
 					id={item.id}
 				/>
 			))}
