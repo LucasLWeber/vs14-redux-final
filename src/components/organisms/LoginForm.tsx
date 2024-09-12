@@ -1,20 +1,23 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 import InputWithLabel from "../molecules/InputWithLabel";
 import { Button, ButtonGoogleLogin } from "../atoms/Button";
-import { LoginValues } from "../../utils/interfaces";
-import {  useSelector } from 'react-redux';
+import { LoginValues, Usuario } from "../../utils/interfaces";
+import {  useDispatch, useSelector } from 'react-redux';
 import {  RootState } from '../../store/store';
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { setToken } from "../../utils/functions";
 import { useTranslation } from 'react-i18next';
+import { jwtDecode } from "jwt-decode";
+import { setUser } from '../../slice/loginSlice';
 
 export default function LoginForm() {
     const { t } = useTranslation();
     const { register, handleSubmit } = useForm<LoginValues>();
     const navigate = useNavigate();
-    
+    const dispatch = useDispatch();
+
     const { loading, status, error } = useSelector((state: RootState) => state.user);
     
     const user:LoginValues = {
@@ -24,9 +27,19 @@ export default function LoginForm() {
 
     const onSubmit: SubmitHandler<LoginValues> = async (data) => {
         if(user.password === user.password && data.email === user.email){
-            setToken("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsaXNzb25AZW1haWwuY29tIiwicGFzc3dvcmQiOiJBbGlzc29uQDciLCJwaWN0dXJlIjo"+
-                "iaHR0cHM6Ly9pbWcuZnJlZXBpay5jb20vdmV0b3Jlcy1wcmVtaXVtL2lsdXN0cmFjYW8tZGUtYXZhdGFyLWRlLWVzdHVkYW50ZS1pY29uZS1kZS1wZXJmaWwtZGUtdXN"
-                + "1YXJpby1hdmF0YXItZGUtam92ZW1fMTE4MzM5LTQ0MDIuanBnIn0.ezh709WxTQUhro5gygBbOTW9Wnv2mySzgy7CHnjdHV4")
+            const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQWxpc3NvbiBGZXJuYW5kZXMiLCJlbWFpbCI6ImFsaXN" +
+            "zb25AZW1haWwuY29tIiwicGljdHVyZSI6Imh0dHBzOi8vaW1nLmZyZWVwaWsuY29tL3ZldG9yZXMtcHJlbWl1bS9pbHVzdHJhY2FvLWRlLWF2" +
+            "YXRhci1kZS1lc3R1ZGFudGUtaWNvbmUtZGUtcGVyZmlsLWRlLXVzdWFyaW8tYXZhdGFyLWRlLWpvdmVtXzExODMzOS00NDAyLmpwZyJ9.6lWP1e3GZOZoLHW5dJW0ic_hsl-3mmh9FFRkaFwb7dY"
+            
+            setToken(token)
+
+            const decoded: Usuario = jwtDecode(token);
+                dispatch(setUser({
+                  name: decoded.name,
+                  email: decoded.email,
+                  picture: decoded.picture
+                }));
+
             navigate('/produtos'); 
         }
         else{
