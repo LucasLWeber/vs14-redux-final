@@ -4,6 +4,7 @@ import { RootState } from '../../store/store';
 import { MdLogout } from "react-icons/md";
 import { removeToken } from "../../utils/functions";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 
 interface MenuItem {
   title: string;
@@ -12,6 +13,7 @@ interface MenuItem {
 }
 
 const Sidebar: React.FC = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const usuario = useSelector((state: RootState) => state.user.usuario);
   const [open, setOpen] = useState<boolean>(false);
@@ -21,13 +23,15 @@ const Sidebar: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(usuario?.picture);
 
   const Menus: MenuItem[] = [
-    { title: "Accounts", src: "user", gap: true },
+    { title: t("account"), src: "user", gap: true },
+    { title: t("setting"), src: "setting" },
   ];
-  const handleLogout =  () => {
+
+  const handleLogout = () => {
     removeToken();
-    navigate("/login")
-    
-  }
+    navigate("/login");
+  };
+
   const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
@@ -48,7 +52,7 @@ const Sidebar: React.FC = () => {
         } bg-custom-black h-screen p-3 pt-8 relative duration-300`}
       >
         <img
-          src="/assets/control.png"
+          src="../../../public/assets/control.png"
           className={`absolute cursor-pointer -right-3 top-9 w-7 border-custom-black border-2 rounded-full ${
             !open && "rotate-180"
           }`}
@@ -60,7 +64,7 @@ const Sidebar: React.FC = () => {
           {selectedImage ? (
             <img
               src={selectedImage}
-              className="w-12 h-12 rounded-full object-fit inline-block "
+              className="w-12 h-12 rounded-full object-fit inline-block"
               alt="User"
             />
           ) : (
@@ -83,24 +87,23 @@ const Sidebar: React.FC = () => {
                 Menu.gap ? "mt-9" : "mt-2"
               }`}
               onClick={() => {
-                if (Menu.title === "Accounts") {
+                if (Menu.title === t("account")) {
                   setIsEditing(true);
                 }
               }}
             >
-              <img src={`/assets/${Menu.src}.png`} alt={Menu.title} />
+              <img src={`../../../public/assets/${Menu.src}.png`} alt={Menu.title} />
               <span className={`${!open && "hidden"} origin-left duration-200`}>
                 {Menu.title}
               </span>
             </li>
-          ))
-          }
+          ))}
 
-          <li onClick={handleLogout}  className="flex rounded-md p-2 cursor-pointer hover:bg-hover-green text-gray-300 text-sm items-center gap-x-4">
-              <MdLogout  color="" style={{
-                color: "#C7C7C7"
-              }} size={28}/>
-              <span className={`${!open && "hidden"} origin-left duration-200`} >Sair</span>
+          <li onClick={handleLogout} className="flex rounded-md p-2 cursor-pointer hover:bg-hover-green text-gray-300 text-sm items-center gap-x-4">
+            <MdLogout color="" style={{ color: "#C7C7C7" }} size={28} />
+            <span className={`${!open && "hidden"} origin-left duration-200`}>
+              {t("logout")}
+            </span>
           </li>
         </ul>
       </div>

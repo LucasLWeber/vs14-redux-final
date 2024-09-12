@@ -1,0 +1,23 @@
+{
+    "emailLabel": "Email",
+    "senhaLabel": "Senha",
+    "titleProdutos": "Produtos",
+    "todos": "Todos",
+    "favoritos": "Favoritos",
+    "maiorPreco": "Maior preço",
+    "menorPreco": "Menor preço",
+    "menorQuantidade": "Menor quantidade",
+    "maiorQuantidade": "Maior quantidade",
+    "maisAvaliado": "Maior avaliação",
+    "menosAvaliado": "Menor avaliação",
+    "estoque": "Quantidade em estoque: ",
+    "txtAdicionar": "Adicionar",
+    "account": "Conta",
+    "setting": "Configurações",
+    "logout": "Sair",
+    "finalizarButton": "Finalizar",
+    "continuarComprandoButton": "Continuar comprando",
+    "subtotalLabel": "Subtotal: ",
+    "carrinhoTitulo": "Carrinho de Compras",
+    "buttonLogin" : "Entrar"
+}

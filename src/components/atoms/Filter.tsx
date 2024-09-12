@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface FilterProps {
     onFilterChange: (value: string) => void;
 }
 
 export default function Filter({ onFilterChange }: FilterProps) {
+    const { t } = useTranslation(); 
     const [selectedValue, setSelectedValue] = useState('todos');
 
     const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -19,14 +21,14 @@ export default function Filter({ onFilterChange }: FilterProps) {
             value={selectedValue}
             onChange={handleChange}
         >
-            <option value="todos">Todos</option>
-            <option value="favoritos">Favoritos</option>
-            <option value="maiorPreco">Maior preço</option>
-            <option value="menorPreco">Menor preço</option>
-            <option value="menorQuantidade">Menor quantidade</option>
-            <option value="maiorQuantidade">Maior quantidade</option>
-            <option value="maisAvaliado">Maior avaliação</option>
-            <option value="menosAvaliado">Menor avaliação</option>
+            <option value="todos">{t('todos')}</option>
+            <option value="favoritos">{t('favoritos')}</option>
+            <option value="maiorPreco">{t('maiorPreco')}</option>
+            <option value="menorPreco">{t('menorPreco')}</option>
+            <option value="menorQuantidade">{t('menorQuantidade')}</option>
+            <option value="maiorQuantidade">{t('maiorQuantidade')}</option>
+            <option value="maisAvaliado">{t('maisAvaliado')}</option>
+            <option value="menosAvaliado">{t('menosAvaliado')}</option>
         </select>
     );
 }
