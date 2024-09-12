@@ -18,5 +18,6 @@
     "finalizarButton": "Finalizar",
     "continuarComprandoButton": "Continuar comprando",
     "subtotalLabel": "Subtotal: ",
-    "carrinhoTitulo": "Carrinho de Compras"
+    "carrinhoTitulo": "Carrinho de Compras",
+    "buttonLogin" : "Entrar"
 }

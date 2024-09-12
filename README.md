@@ -27,7 +27,7 @@ DBC Electronics é uma aplicação de e-commerce construída com React, que segu
 ### 🔒 Login
 - Para fins de desenvolvimento e testes, a aplicação utiliza um usuário simulado (mockado) para acesso. Este usuário mockado permite a navegação e o teste das funcionalidades do site.
 
-    👦 **Usuario:** alissonf94  
+    📧 **Email:** alisson@email.com 
     🔑 **Senha:** Alissonf@7
 
 
