@@ -7,7 +7,7 @@ export function Header(){
 		<header className="bg-custom-green w-full py-4">
 			<div className="flex items-center justify-between w-4/5 mx-auto">
 				<Logo />
-				<div className="flex gap-8 justity-center itens-center">
+				<div className="flex gap-8 justity-center items-center">
 				  <Navbar />
 				  <Tradutor/>
 				</div>
