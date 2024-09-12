@@ -1,7 +1,9 @@
+import { useSelector } from "react-redux";
 import { useGetAllProductsQuery } from "../../services/productsApi";
 import { Product } from "../../utils/interfaces";
 import { Subtitle } from "../atoms/Subtitle";
 import { Card } from "../molecules/Card";
+import { RootState } from "../../store/store";
 
 interface ProductListProps {
   filter: string;
@@ -9,6 +11,7 @@ interface ProductListProps {
 
 export function ProductList({ filter }: ProductListProps) {
   const { data: products, error, isLoading } = useGetAllProductsQuery();
+  const favorites = useSelector((state: RootState) => state.favorites.favoriteProducts);
 	
   if (isLoading) {
     return <Subtitle content="Carregando lista de produtos..." />;
@@ -23,6 +26,9 @@ export function ProductList({ filter }: ProductListProps) {
 	const productsCopy = [...products];
     
     switch (filter) {
+	  case "favoritos":
+		return productsCopy.filter(p => 
+			favorites.some(favProdutc => favProdutc.id === p.id));	
       case "maiorPreco":
         return productsCopy.sort((a, b) => b.price - a.price);
       case "menorPreco":

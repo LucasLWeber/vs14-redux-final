@@ -106,6 +106,7 @@ export interface Product {
 		rate: number;
 		count: number
 	}
+	isFavorite?: boolean;
 }
 
 export interface ProductImageOnCartProps{

@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { CardProps, Product } from "../../utils/interfaces";
 import { Button } from "../atoms/Button";
 import { CardImage } from "../atoms/Card/CardImage";
@@ -7,7 +7,10 @@ import { CardRating } from "../atoms/Card/CardRating";
 import { CardTitle } from "../atoms/Card/CardTitle";
 import { Price } from "../atoms/Card/Price";
 import { addProductIntoCart } from "../../slice/cartSlice";
-import { useState } from "react";
+import { CiHeart } from "react-icons/ci";
+import { RootState } from "../../store/store";
+import { toggleFavorite } from "../../slice/favoritesSlice";
+import { FaHeart } from "react-icons/fa";
 
 interface CardComponentProps extends CardProps {
 	product: Product;
@@ -15,12 +18,16 @@ interface CardComponentProps extends CardProps {
 
 export function Card({product, ...cardProps}: CardComponentProps){
 	const dispatch = useDispatch();
-	const [isDisabled, setIsDisabled] = useState(false);
+	const favoriteProducts = useSelector((state: RootState) => state.favorites.favoriteProducts);
+	const isFavorite = favoriteProducts.some((favProduct) => favProduct.id === product.id);
 
 	const handleAddToCart = () => {
 		dispatch(addProductIntoCart(product));
-		setIsDisabled(true);
 	};
+
+	const handleToggleFavorite = () => {
+		dispatch(toggleFavorite(product))
+	}
 
 	return(
 		<div className="flex flex-col rounded-lg shadow justify-between overflow-hidden max-w-[300px]">
@@ -31,12 +38,18 @@ export function Card({product, ...cardProps}: CardComponentProps){
 				<CardTitle content={cardProps.cardTitleProps.content} />
 				<div className="flex items-center justify-between gap-x-4">
 					<Price value={cardProps.priceProps.value} />
-					<Button 
-						text="Adicionar" 
-						type="button" 
-						addItemIntoCart={handleAddToCart} 
-						isDisabled={isDisabled}
-					/>
+					<div className="flex items-center gap-x-2">
+						{isFavorite ? (
+							<FaHeart className="text-red-500 cursor-pointer" onClick={handleToggleFavorite} />
+						) : (
+							<CiHeart className="cursor-pointer" onClick={handleToggleFavorite} />
+						)}
+						<Button 
+							text="Adicionar" 
+							type="button" 
+							addItemIntoCart={handleAddToCart} 
+						/>
+					</div>
 				</div>
 				<div className="flex items-center justify-between gap-x-4">
 					<CardItemsInStock value={cardProps.itemInStock.value} />

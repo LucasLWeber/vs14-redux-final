@@ -5,7 +5,7 @@ interface FilterProps {
 }
 
 export default function Filter({ onFilterChange }: FilterProps) {
-    const [selectedValue, setSelectedValue] = useState('todos'); // Valor inicial
+    const [selectedValue, setSelectedValue] = useState('todos');
 
     const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         const newValue = e.target.value;
@@ -20,6 +20,7 @@ export default function Filter({ onFilterChange }: FilterProps) {
             onChange={handleChange}
         >
             <option value="todos">Todos</option>
+            <option value="favoritos">Favoritos</option>
             <option value="maiorPreco">Maior preço</option>
             <option value="menorPreco">Menor preço</option>
             <option value="menorQuantidade">Menor quantidade</option>
