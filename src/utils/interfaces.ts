@@ -140,3 +140,25 @@ export interface RemoveButtonProps{
 export interface ProductQuantityProps{
 	quantity: number;
 }
+
+export interface FretePayload {
+	from: { postal_code: string };
+	to: { postal_code: string };
+	package: { height: number; width: number; length: number; weight: number };
+  }
+  
+
+export interface FreteResponse {
+	id: number;
+	name: string;
+	price: string;
+	custom_price: string;
+	discount: string;
+	currency: string;
+	delivery_time: number;
+	company: {
+		id: number;
+		name: string;
+		picture: string;
+	};
+}
