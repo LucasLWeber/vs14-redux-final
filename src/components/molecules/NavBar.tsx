@@ -5,10 +5,6 @@ import { CheckoutModal } from "../organisms/CheckoutModal";
 
 export function Navbar() {
   const [isModalOpen, setModalOpen] = useState(false); 
-<<<<<<< HEAD
-  const [counter, setCounter] = useState<number>(0);
-=======
->>>>>>> main
 
   const toggleModal = () => {
     setModalOpen(!isModalOpen);
