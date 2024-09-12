@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 import { CheckoutModalProps } from "../../utils/interfaces";
-import { CheckoutButton } from "../atoms/Checkout/CheckoutButton";
-import { CheckoutButtonSecondary } from "../atoms/Checkout/CheckoutButtonSecondary";
+import { CheckoutButton } from "../atoms/CheckoutModal/CheckoutButton";
+import { CheckoutButtonSecondary } from "../atoms/CheckoutModal/CheckoutButtonSecondary";
 import { Subtitle } from "../atoms/Subtitle";
-import { ProductItem } from "../molecules/Checkout/ProductItem";
+import { ProductItem } from "../molecules/CheckoutModal/ProductItem";
 import { RootState } from "../../store/store";
 import { useSelector } from "react-redux";
 import { useMemo } from "react";
-import { Subtotal } from "../atoms/Checkout/Subtotal";
+import { Subtotal } from "../atoms/CheckoutModal/Subtotal";
 
 export function CheckoutModal({ isOpen, onClose }: CheckoutModalProps){
 	const cart = useSelector((state: RootState) => state.cart.cart)
@@ -35,7 +35,7 @@ export function CheckoutModal({ isOpen, onClose }: CheckoutModalProps){
 			{renderedProducts.map(item => (
 				<ProductItem
 					key={item.id}
-					image={{name: item.title, path: item.image}}
+					image={{ path: item.image}}
 					id={item.id}
 				/>
 			))}
@@ -43,7 +43,7 @@ export function CheckoutModal({ isOpen, onClose }: CheckoutModalProps){
 			<Subtotal />
 			<div className="w-full flex items-center justify-center mt-8 gap-x-4 gap-y-4 flex-wrap">
 				<Link to={'/finalizar'} onClick={onClose}>
-					<CheckoutButton text="Finalizar" type="button" />
+					<CheckoutButton text="Finalizar" type="button" isDisabled={cart.length === 0}/>
 				</Link>
 				<Link to={'/produtos'} onClick={onClose}>
 					<CheckoutButtonSecondary text="Continuar comprando" type="button" />
