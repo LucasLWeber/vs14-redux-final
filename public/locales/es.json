@@ -18,5 +18,10 @@
     "continuarComprandoButton": "Continuar comprando",
     "subtotalLabel": "Subtotal: ",
     "carrinhoTitulo": "Carrito de compras",
-    "buttonLogin": "Entrar"
+    "buttonLogin": "Entrar",
+    "editarPerfil": "Editar Perfil",
+    "nomeLabel": "Nombre",
+    "imagemSidebar" : "Imagen",
+    "salvarSidebar" : "Ahorrar",
+    "cancelarSidebar" : "Cancelar"
 }

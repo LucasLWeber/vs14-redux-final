@@ -18,6 +18,10 @@
     "continuarComprandoButton": "Continue shopping",
     "subtotalLabel": "Subtotal: ",
     "carrinhoTitulo": "Shopping Cart",
-    "buttonLogin": "Enter"
-
+    "buttonLogin": "Enter",
+    "editarPerfil": "Edit Profile",
+    "nomeLabel": "Name",
+    "imagemSidebar" : "Image",
+    "salvarSidebar" : "Save",
+    "cancelarSidebar" : "Cancel"
 }
