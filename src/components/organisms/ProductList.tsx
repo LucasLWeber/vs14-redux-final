@@ -5,14 +5,17 @@ import { Subtitle } from "../atoms/Subtitle";
 import { Card } from "../molecules/Card";
 import { RootState } from "../../store/store";
 
+
 interface ProductListProps {
   filter: string;
 }
 
 export function ProductList({ filter }: ProductListProps) {
+  
   const { data: products, error, isLoading } = useGetAllProductsQuery();
   const favorites = useSelector((state: RootState) => state.favorites.favoriteProducts);
-	
+	console.log(error);
+  
   if (isLoading) {
     return <Subtitle content="Carregando lista de produtos..." />;
   }

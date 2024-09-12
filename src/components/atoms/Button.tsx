@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 export function Button({ text, type, addItemIntoCart }: ButtonProps){
 	return(
 		<button 
-			className="bg-custom-green text-white px-2 py-1 rounded text-sm hover:bg-hover-green shadow"
+			className="bg-custom-green text-white px-8 py-2 rounded text-sm hover:bg-hover-green shadow font-medium font-poppins"
 			type={type}
 			onClick={addItemIntoCart}
 		>

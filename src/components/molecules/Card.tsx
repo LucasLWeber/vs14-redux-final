@@ -11,12 +11,14 @@ import { CiHeart } from "react-icons/ci";
 import { RootState } from "../../store/store";
 import { toggleFavorite } from "../../slice/favoritesSlice";
 import { FaHeart } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 interface CardComponentProps extends CardProps {
 	product: Product;
   }
 
 export function Card({product, ...cardProps}: CardComponentProps){
+	const {t} = useTranslation()
 	const dispatch = useDispatch();
 	const favoriteProducts = useSelector((state: RootState) => state.favorites.favoriteProducts);
 	const isFavorite = favoriteProducts.some((favProduct) => favProduct.id === product.id);
@@ -45,7 +47,7 @@ export function Card({product, ...cardProps}: CardComponentProps){
 							<CiHeart className="cursor-pointer" onClick={handleToggleFavorite} />
 						)}
 						<Button 
-							text="Adicionar" 
+							text={t("txtAdicionar")} 
 							type="button" 
 							addItemIntoCart={handleAddToCart} 
 						/>
