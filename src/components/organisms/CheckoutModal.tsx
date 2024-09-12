@@ -43,7 +43,7 @@ export function CheckoutModal({ isOpen, onClose }: CheckoutModalProps){
 			<Subtotal />
 			<div className="w-full flex items-center justify-center mt-8 gap-x-4 gap-y-4 flex-wrap">
 				<Link to={'/finalizar'} onClick={onClose}>
-					<CheckoutButton text="Finalizar" type="button" />
+					<CheckoutButton text="Finalizar" type="button" isDisabled={cart.length === 0}/>
 				</Link>
 				<Link to={'/produtos'} onClick={onClose}>
 					<CheckoutButtonSecondary text="Continuar comprando" type="button" />
