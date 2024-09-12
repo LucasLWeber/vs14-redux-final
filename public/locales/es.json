@@ -21,7 +21,18 @@
     "buttonLogin": "Entrar",
     "editarPerfil": "Editar Perfil",
     "nomeLabel": "Nombre",
-    "imagemSidebar" : "Imagen",
-    "salvarSidebar" : "Ahorrar",
-    "cancelarSidebar" : "Cancelar"
+    "imagemSidebar": "Imagen",
+    "salvarSidebar": "Ahorrar",
+    "cancelarSidebar": "Cancelar",
+    "finalizar": {
+        "title": "Finalizar compra",
+        "subtitle": "Tu carrito de compras",
+        "link": "Seguir comprando",
+        "total": "Total",
+        "itensInCart": "Artículos en el carrito",
+        "subtotal": "Subtotal",
+        "cepPlaceholder": "Ingresa tu código postal",
+        "freteButton": "Calcular envío",
+        "checkoutButton": "Ir al pago"
+    }
 }

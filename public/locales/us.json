@@ -21,7 +21,18 @@
     "buttonLogin": "Enter",
     "editarPerfil": "Edit Profile",
     "nomeLabel": "Name",
-    "imagemSidebar" : "Image",
-    "salvarSidebar" : "Save",
-    "cancelarSidebar" : "Cancel"
+    "imagemSidebar": "Image",
+    "salvarSidebar": "Save",
+    "cancelarSidebar": "Cancel",
+    "finalizar": {
+        "title": "Complete purchase",
+        "subtitle": "Your shopping cart",
+        "link": "Continue shopping",
+        "total": "Total",
+        "itensInCart": "Items in cart",
+        "subtotal": "Subtotal",
+        "cepPlaceholder": "Enter your ZIP code",
+        "freteButton": "Calculate shipping",
+        "checkoutButton": "Proceed to payment"
+    }
 }
